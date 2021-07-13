@@ -2,10 +2,6 @@ data "external" "hetzner_cloud_api_key" {
 	program = ["${path.module}/fetch-key.sh"]
 }
 
-provider "hcloud" {
-  token = data.external.hetzner_cloud_api_key.result.hetzner_cloud_api_key
-}
-
 resource "hcloud_server" "kurisu" {
   name        = "kurisu"
   server_type = "cx11-ceph"
