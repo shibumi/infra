@@ -1,3 +1,3 @@
 resource "cloudflare_zone" "shibumi_dev" {
-    zone = "shibumi.dev"
+  zone = "shibumi.dev"
 }

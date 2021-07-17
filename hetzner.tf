@@ -1,5 +1,5 @@
 data "external" "hetzner_cloud_api_key" {
-	program = ["${path.module}/fetch-key.sh"]
+  program = ["${path.module}/fetch-key.sh"]
 }
 
 resource "hcloud_server" "kurisu" {
