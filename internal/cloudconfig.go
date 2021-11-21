@@ -11,11 +11,14 @@ import (
 // cloudConfigContentType cannot be a constant, because we cannot use pointers to constants in Go
 var cloudConfigContentType = "text/cloud-config"
 
+// CloudConfig extends the pulumi cloud-config with an ID
 type CloudConfig struct {
 	ID          string
 	CloudConfig *cloudinit.LookupConfigResult
 }
 
+// NewCloudConfigs reads all cloud-config files in a given path and returns
+// a slice of CloudConfig
 func NewCloudConfigs(ctx *pulumi.Context, path string) ([]CloudConfig, error) {
 	var cloudConfigs []CloudConfig
 
